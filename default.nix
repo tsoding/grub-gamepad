@@ -10,6 +10,7 @@ with import <nixpkgs> {}; rec {
                     gnum4
                     bison
                     flex
-                    SDL ];
+                    SDL
+                    xorriso ];
   };
 }
