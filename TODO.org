@@ -1,0 +1,41 @@
+* TODO Useful links from chat
+
+  #+BEGIN_SRC org
+    2019-06-18 16:19:46.355591809|lorymaster|Could also add this in the todo: https://tools.ietf.org/html/rfc6970 RFC for universal plug and play protocol
+    2019-06-18 18:42:37.673204119|x33grawl|whoops this one https://stackoverflow.com/questions/31799336/how-to-build-grub2-bootloader-from-its-source-and-test-it-with-qemu-emulator
+    2019-06-18 19:16:41.155079973|joshuagollaher|this says that it only happens on 32 bit https://lists.gnu.org/archive/html/help-grub/2013-11/msg00006.html
+    2019-06-18 19:33:59.211878178|wtfblub|theres a patch for this error http://git.savannah.gnu.org/cgit/grub.git/commit/util?id=842c390469e2c2e10b5aa36700324cd3bde25875
+  #+END_SRC
+
+* TODO Roadmap
+
+  - [-] Development Setup
+    - [ ] Mirror in Tsoding organization
+      - [ ] [[https://help.github.com/en/articles/about-github-mirrors][About GitHub mirrors - GitHub Help]]
+        - [ ] [[https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks][Git - Git Hooks]]
+          - [ ] offscreen
+    - [X] Emulation
+      - [X] qemu
+        - [X] Actually the recommended way to test grub
+      - [X] VirtualBox
+        - [X] To heavy
+    - [X] Build
+      - [X] git clone git://git.savannah.gnu.org/grub.git
+        - [X] INSTALL file
+          - [X] The instructions mention some kind of grub-emu. What is that?
+            - [X] [[http://www.ubuntubuzz.com/2015/06/how-to-preview-grub-bootloader-changes.html][How To Preview GRUB Bootloader Changes Without Restart with grub-emu]]
+              - [X] I don't have it in NixOS. Can I build it from the source code?
+                - [X] No, grub-emu is a hoax.
+        - [X] [[https://stackoverflow.com/questions/31799336/how-to-build-grub2-bootloader-from-its-source-and-test-it-with-qemu-emulator][how to build grub2 bootloader from it's source and test it with qemu emulator...]]
+          - [X] You have to use grub-mkrescue instead
+            #+BEGIN_SRC bash
+              grub-mkrescue -o test.iso
+              qemu-system-i386 -cdrom test.iso
+            #+END_SRC
+  - [ ] Find the way to receive stuff from gamepad
+    - [ ] Dig down through abstractions
+      - [ ] SDL2
+        - [ ] X11
+          - [ ] Linux Input
+            - [ ] Driver
+              - [ ] ...
