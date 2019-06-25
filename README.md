@@ -16,3 +16,4 @@ $ qemu-system-i386 -cdrom test.iso
 # References
 
 - https://github.com/rafaelffilho/RafaOS
+- https://wiki.osdev.org/GRUB
