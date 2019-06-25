@@ -9,6 +9,10 @@ $ CFLAGS=-Wno-error ./configure
 $ make -j5
 
 $ cd ..
-$ ./grub/grub-mkrescue --directory ./grub/grub-core/ -o test.iso
+$ make
 $ qemu-system-i386 -cdrom test.iso
 ```
+
+# References
+
+- https://github.com/rafaelffilho/RafaOS
