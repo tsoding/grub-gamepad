@@ -36,76 +36,76 @@
             #+END_SRC
   - [-] See how GRUB 2 handles keyboard
     - [X] Gameport Exploration
-      - [X] file:/home/streamer/Programming/tsoding/grub-gamepad/grub/grub-core/commands/lspci.c::79
+      - [X] file:./grub/grub-core/commands/lspci.c::79
         - [X] What is Gameport Controller
           - [X] [[https://www.ebay.com/itm/USB-to-Joystick-15-Pin-Male-Gameport-Adapter-Converter-Adaptor-With-6ft-Cable/251010052320?epid=1943412725&hash=item3a715d70e0:g:mqEAAOSwYHxWOI1M][USB to Joystick 15 Pin Male Gameport Adapter Converter Adaptor With 6ft Cable...]]
             - [X] The VGA looking thing
           - [X] MIDI gameport
             - [X] [[https://en.wikipedia.org/wiki/Game_port][Game port - Wikipedia]]
     - [ ] Some boring keyboard layout stuff
-      - [ ] file:/home/streamer/Programming/tsoding/grub-gamepad/grub/include/grub/keyboard_layouts.h::36
+      - [ ] file:./grub/include/grub/keyboard_layouts.h::36
         - [ ] enum grub_keyboard_key looks like a GRUB abstraction layer over keyboards
-          - [ ] file:/home/streamer/Programming/tsoding/grub-gamepad/grub/util/grub-mklayout.c::215
+          - [ ] file:./grub/util/grub-mklayout.c::215
             - [ ] grub-mklayout
     - [ ] Can we print all of the USB devices GRUB sees
     - [-] Actual USB Keyboard Support
-      - [-] file:/home/streamer/Programming/tsoding/grub-gamepad/grub/grub-core/term/usb_keyboard.c::1
+      - [-] file:./grub/grub-core/term/usb_keyboard.c::1
         - [-] `grub_usb_keyboard_getkey`
           - [-] it's actually a method of `struct grub_term_input`
-            - [-] Definition of `struct grub_term_input` file:/home/streamer/Programming/tsoding/grub-gamepad/grub/include/grub/term.h::137
+            - [-] Definition of `struct grub_term_input` file:./grub/include/grub/term.h::137
               - [ ] The terminals form a LinkedList
                 - [ ] What's up with `struct grub_term_input **prev;` Why is it a double pointer?
               - [-] How many terms do we have?
-                - [-] file:/home/streamer/Programming/tsoding/grub-gamepad/grub/grub-core/kern/term.c::87
+                - [-] file:./grub/grub-core/kern/term.c::87
                   - [-] `grub_getkey_noblock`
                     - [-] FOR_ACTIVE_TERM_INPUTS
-                      - [-] file:/home/streamer/Programming/tsoding/grub-gamepad/grub/include/grub/term.h::321
+                      - [-] file:./grub/include/grub/term.h::321
                         - [X] FOR_LIST_ELEMENTS
-                          - file:/home/streamer/Programming/tsoding/grub-gamepad/grub/include/grub/list.h::37
+                          - file:./grub/include/grub/list.h::37
                           - It is used to iterate LinkedLists
                           - [X] Is that X macro?
                             - [X] No
                         - [-] `grub_term_inputs`
                           - [-] This is probably the global list of terminals
-                            - [-] file:/home/streamer/Programming/tsoding/grub-gamepad/grub/include/grub/term.h::241
+                            - [-] file:./grub/include/grub/term.h::241
                               - [X] EXPORT_VAR
-                                - file:/home/streamer/Programming/tsoding/grub-gamepad/grub/include/grub/symbol.h::69
-                                - [X] file:/home/streamer/Programming/tsoding/grub-gamepad/grub/grub-core/Makefile.am::298
+                                - file:./grub/include/grub/symbol.h::69
+                                - [X] file:./grub/grub-core/Makefile.am::298
                                   - This looks like external preprocessing
                                   - [X] ASM_PREFIX
-                                    - [X] file:/home/streamer/Programming/tsoding/grub-gamepad/grub/grub-core/Makefile.am::286
+                                    - [X] file:./grub/grub-core/Makefile.am::286
                                       - [X] Looks like a deadend.
                                 - It's probably very important. But we can simply ignore it
                               - [-] Where grub_term_inputs are initialized
-                                - [-] fake_input file:/home/streamer/Programming/tsoding/grub-gamepad/grub/grub-core/tests/fake_input.c::56
+                                - [-] fake_input file:./grub/grub-core/tests/fake_input.c::56
                                   - [-] usb_keyboard.c and fake_input.c are implementations of the same interface
                                     - [X] grub_usb_keyboard_attach looks interesting
-                                      - [X] file:/home/streamer/Programming/tsoding/grub-gamepad/grub/grub-core/term/usb_keyboard.c::147
+                                      - [X] file:./grub/grub-core/term/usb_keyboard.c::147
                                         - [X] grub_usb_device_t
                                           - [X] It was a spoiler
                                     - [X] What is the interface
                                       - [X] Look at the headers they include. They probably include the interface
                                         - [X] #include <grub/term.h>
                                           - [X] There is also gfxterm.h
-                                            - [X] file:/home/streamer/Programming/tsoding/grub-gamepad/grub/include/grub/gfxterm.h::1
+                                            - [X] file:./grub/include/grub/gfxterm.h::1
                                               - [X] I don't think it's important right now
-                                          - [X] file:/home/streamer/Programming/tsoding/grub-gamepad/grub/include/grub/term.h::1
+                                          - [X] file:./grub/include/grub/term.h::1
                                             - [X] And we already been here
                                     - [-] They all initialize their own instance of grub_term_input
                                       - [-] How those instances are assembled into a linked list later?
                                         - [-] Do usb_keyboard and fake_input mention grub_term_inputs
                                           - [X] usb_keyboard does not
                                           - [X] fake_input
-                                            - [X] file:/home/streamer/Programming/tsoding/grub-gamepad/grub/grub-core/tests/fake_input.c::56
+                                            - [X] file:./grub/grub-core/tests/fake_input.c::56
                                           - [ ] grub_term_register_input_active
-                                            - [ ] file:/home/streamer/Programming/tsoding/grub-gamepad/grub/include/grub/term.h::267
+                                            - [ ] file:./grub/include/grub/term.h::267
                                               - [ ] And it mentions grub_term_inputs
                                                 - [ ] Let's go up the callstack
-                                                  - [ ] file:/home/streamer/Programming/tsoding/grub-gamepad/grub/grub-core/term/usb_keyboard.c::147
+                                                  - [ ] file:./grub/grub-core/term/usb_keyboard.c::147
                                                     - [ ] grub_usb_keyboard_attach
-                                                      - [ ] file:/home/streamer/Programming/tsoding/grub-gamepad/grub/grub-core/term/usb_keyboard.c::442
+                                                      - [ ] file:./grub/grub-core/term/usb_keyboard.c::442
                                                         - [ ] struct grub_usb_attach_desc
-                                                          - [ ] file:/home/streamer/Programming/tsoding/grub-gamepad/grub/include/grub/usb.h::297
+                                                          - [ ] file:./grub/include/grub/usb.h::297
                                 - [ ] 
   - [ ] Try to debug GRUB2 with gdb and see how it boots itself up
   - [ ] Find the way to receive stuff from gamepad
