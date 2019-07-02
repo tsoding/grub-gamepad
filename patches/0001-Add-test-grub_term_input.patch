@@ -1,0 +1,71 @@
+From 4ed64a445161a3cdfd93740ab33b741e85a77995 Mon Sep 17 00:00:00 2001
+From: rexim <reximkut@gmail.com>
+Date: Wed, 3 Jul 2019 03:28:46 +0700
+Subject: [PATCH] Add test grub_term_input
+
+---
+ grub-core/Makefile.core.def |  6 ++++++
+ grub-core/term/khooy.c      | 34 ++++++++++++++++++++++++++++++++++
+ 2 files changed, 40 insertions(+)
+ create mode 100644 grub-core/term/khooy.c
+
+diff --git a/grub-core/Makefile.core.def b/grub-core/Makefile.core.def
+index 2dfa22a92..e5092e452 100644
+--- a/grub-core/Makefile.core.def
++++ b/grub-core/Makefile.core.def
+@@ -535,6 +535,12 @@ module = {
+   enable = usb;
+ };
+ 
++module = {
++  name = khooy;
++  common = term/khooy.c;
++  enable = i386;
++};
++
+ module = {
+   name = usbserial_common;
+   common = bus/usb/serial/common.c;
+diff --git a/grub-core/term/khooy.c b/grub-core/term/khooy.c
+new file mode 100644
+index 000000000..9e438f69b
+--- /dev/null
++++ b/grub-core/term/khooy.c
+@@ -0,0 +1,34 @@
++#include <grub/dl.h>
++#include <grub/term.h>
++
++GRUB_MOD_LICENSE ("GPLv3");
++
++static int
++khooy_getkey (struct grub_term_input *term __attribute__ ((unused)))
++{
++    return 0x43;
++}
++
++static int
++khooy_getkeystatus (struct grub_term_input *term __attribute__ ((unused)))
++{
++    return 1;
++}
++
++static struct grub_term_input khooy_input_term =
++  {
++    .name = "khooy",
++    .getkey = khooy_getkey,
++    .getkeystatus = khooy_getkeystatus
++  };
++
++GRUB_MOD_INIT(khooy)
++{
++    grub_dprintf("khooy", "Khooy module loaded\n");
++    grub_term_register_input("khooy", &khooy_input_term);
++}
++
++GRUB_MOD_FINI(khooy)
++{
++    grub_dprintf("khooy", "Khooy fini-ed\n");
++}
+-- 
+2.19.2
+
