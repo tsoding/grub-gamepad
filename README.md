@@ -4,7 +4,7 @@
 $ nix-shell     # On NixOS
 
 $ cd grub/
-$ git apply ../patches/0001-Add-test-grub_term_input.patch
+$ git am ../patches/*.patch
 $ ./autogen.sh
 $ CFLAGS=-Wno-error ./configure
 $ make -j5
