@@ -11,6 +11,8 @@ with import <nixpkgs> {}; rec {
                     bison
                     flex
                     SDL
-                    xorriso ];
+                    xorriso
+                    global
+                  ];
   };
 }
