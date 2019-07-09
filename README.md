@@ -6,6 +6,7 @@
 ## Quick Start
 
 ```console
+$ git clone --recursive git@github.com:tsoding/grub-gamepad.git
 $ nix-shell     # On NixOS
 
 $ cd grub/
@@ -24,6 +25,7 @@ grub> terminal_input khooy
 
 - https://github.com/rafaelffilho/RafaOS
 - https://wiki.osdev.org/GRUB
+- The Official GRUB repo: git://git.savannah.gnu.org/grub.git
 
 ## Support
 
