@@ -40,6 +40,8 @@ grub> nativedisk ohci
 ```console
 $ lsusb
 $ sudo qemu-system-i386 -usb -device usb-host,hostbus=<gamepad-bus>,hostaddr=<gamepad-addr> -cdrom test.iso
+grub> nativedisk pata
+grub> nativedisk uhci
 ```
 
 ## References
