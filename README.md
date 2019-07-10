@@ -18,21 +18,21 @@ $ cd ..
 $ make
 $ qemu-system-i386 -cdrom test.iso
 ```
-## Setting up Testing Input
-
-```
-grub> terminal_input khooy
-```
 
 ## Connecting Gamepad via USB
 
 ### VirtualBox
 
-Connect Gamepad as an OHCI device.
+- Create Virtual Machine with 256MB of RAM and no HDD
+- Attach the `test.iso` as Live CD
+- Connect a Gamepad as an OHCI device.
+- Start the machine to load into GRUB
 
 ```console
 grub> nativedisk pata
 grub> nativedisk ohci
+grub> insmod khooy
+grub> terminal_input khooy
 ```
 
 ### QEMU
@@ -42,6 +42,8 @@ $ lsusb
 $ sudo qemu-system-i386 -usb -device usb-host,hostbus=<gamepad-bus>,hostaddr=<gamepad-addr> -cdrom test.iso
 grub> nativedisk pata
 grub> nativedisk uhci
+grub> insmod khooy
+grub> terminal_input khooy
 ```
 
 ## References
