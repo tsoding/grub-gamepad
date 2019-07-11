@@ -51,7 +51,7 @@ grub> terminal_input khooy
 ### Adding New Module
 
 TBD
-<!-- TODO: Adding New Module is not documented -->
+<!-- TODO(#6): Adding New Module is not documented -->
 
 ### Registering New Terminal Input
 
