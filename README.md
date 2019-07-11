@@ -56,7 +56,7 @@ TBD
 ### Registering New Terminal Input
 
 TBD
-<!-- TODO: Registering New Terminal Input is not documented -->
+<!-- TODO(#7): Registering New Terminal Input is not documented -->
 
 ### Attaching to a USB device
 
