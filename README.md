@@ -61,7 +61,7 @@ TBD
 ### Attaching to a USB device
 
 TBD
-<!-- TODO: Attaching to a USB device is not documented -->
+<!-- TODO(#8): Attaching to a USB device is not documented -->
 
 ## References
 
