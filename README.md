@@ -46,6 +46,23 @@ grub> insmod khooy
 grub> terminal_input khooy
 ```
 
+## Architecture
+
+### Adding New Module
+
+TBD
+<!-- TODO: Adding New Module is not documented -->
+
+### Registering New Terminal Input
+
+TBD
+<!-- TODO: Registering New Terminal Input is not documented -->
+
+### Attaching to a USB device
+
+TBD
+<!-- TODO: Attaching to a USB device is not documented -->
+
 ## References
 
 - https://github.com/rafaelffilho/RafaOS
