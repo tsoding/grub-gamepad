@@ -23,20 +23,18 @@
           - [X] file:./grub/util/grub-mklayout.c::215
             - [X] grub-mklayout
               - [X] not sure if it's even useful
-    - [ ] How I can type anything in the GRUB if I don't have any USB devices (according to `usb`)
-      - [ ] You are using terminal_input called console
-        - [ ] Where is it located?
-    - [-] Some kind of fake input that constantly produces some actions
-      - [ ] file:./grub/grub-core/tests/fake_input.c::1
-      - [-] file:/home/streamer/Programming/tsoding/grub-gamepad/grub/grub-core/Makefile.core.def::1912
-        - [ ] 
+    - [X] How I can type anything in the GRUB if I don't have any USB devices (according to `usb`)
+      - [X] You are using terminal_input called console
+        - [X] Where is it located?
+          - [X] Most probably here file:grub/grub-core/term/i386/pc/console.c::1
+    - [X] Some kind of fake input that constantly produces some actions
+      - [X] file:./grub/grub-core/tests/fake_input.c::1 as an example
+        - [X] file:grub/grub-core/term/khooy.c::1
     - [-] How actual USB Keyboard Support works
       - [-] file:./grub/grub-core/term/usb_keyboard.c::1
         - [-] `grub_usb_keyboard_getkey`
           - [-] it's actually a method of `struct grub_term_input`
             - [-] Definition of `struct grub_term_input` file:./grub/include/grub/term.h::137
-              - [ ] The terminals form a LinkedList
-                - [ ] What's up with `struct grub_term_input **prev;` Why is it a double pointer?
               - [-] How many terms do we have?
                 - [-] file:./grub/grub-core/kern/term.c::87
                   - [-] `grub_getkey_noblock`
