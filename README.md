@@ -3,6 +3,10 @@
 - Development is done on https://twitch.tv/tsoding
 - Archive of the streams: https://www.twitch.tv/collections/qhijEFrmqRUFvA
 
+## Supported Gamepads
+
+- Logitech Rumble Gamepad F510 in DirectInput mode
+
 ## Quick Start
 
 ```console
