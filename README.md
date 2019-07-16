@@ -35,8 +35,8 @@ $ qemu-system-i386 -cdrom test.iso
 ```console
 grub> nativedisk pata
 grub> nativedisk ohci
-grub> insmod khooy
-grub> terminal_input khooy
+grub> insmod usb_gamepad
+grub> terminal_input usb_gamepad
 ```
 
 ### QEMU
@@ -46,8 +46,8 @@ $ lsusb
 $ sudo qemu-system-i386 -usb -device usb-host,hostbus=<gamepad-bus>,hostaddr=<gamepad-addr> -cdrom test.iso
 grub> nativedisk pata
 grub> nativedisk uhci
-grub> insmod khooy
-grub> terminal_input khooy
+grub> insmod usb_gamepad
+grub> terminal_input usb_gamepad
 ```
 
 ## Architecture
