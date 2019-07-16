@@ -136,3 +136,20 @@
                 - [X] Yep
 
       
+* DONE Get rid of the grub source · Issue #4 · tsoding/grub-gamepad · GitHub
+
+  - [X] [[https://github.com/tsoding/grub-gamepad/issues/4][Get rid of the grub source · Issue #4 · tsoding/grub-gamepad · GitHub]]
+    - [X] How to build a GRUB module without GRUB source code?
+      - [X] [[https://blog.fpmurphy.com/2010/06/grub2-modules.html][GRUB2 Modules « Musings]]
+        - [X] This article suggests to make the module a part of the build process
+      - [X] [[https://wiki.osdev.org/Writing_GRUB_Modules][Writing GRUB Modules - OSDev Wiki]]
+        - [X] You can build "out-of-tree", but this is just one option
+          - [X] Building "in-tree" is not even something that is discouraged
+            - [X] I think we gonna keep doing "in-tree" because it
+              handles a lot of stuff for out-of-the-box
+
+* TODO New grub version · Issue #5 · tsoding/grub-gamepad · GitHub
+
+  - [X] [[https://github.com/tsoding/grub-gamepad/issues/5][New grub version · Issue #5 · tsoding/grub-gamepad · GitHub]]
+    - [X] configure.ac:414: error: possibly undefined macro: AC_CHECK_HEADERS
+      - [X] pkg-config

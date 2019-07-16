@@ -14,12 +14,12 @@ $ git clone --recursive git@github.com:tsoding/grub-gamepad.git
 $ nix-shell     # On NixOS
 
 $ cd grub/
-$ ./autogen.sh
-$ CFLAGS=-Wno-error ./configure
+$ ./bootstrap
+$ ./configure
 $ make -j5
 
 $ cd ..
-$ make
+$ make -B
 $ qemu-system-i386 -cdrom test.iso
 ```
 

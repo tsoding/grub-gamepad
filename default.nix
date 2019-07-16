@@ -2,6 +2,7 @@ with import <nixpkgs> {}; rec {
   grubEnv = stdenv.mkDerivation {
     name = "grub-env";
     buildInputs = [ python27Full
+                    pkgconfig
                     autoconf
                     automake
                     gnumake
