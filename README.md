@@ -69,6 +69,7 @@ TBD
 
 ## References
 
+- https://steamcommunity.com/groups/steamuniverse/discussions/0/558751660797029626/
 - https://github.com/rafaelffilho/RafaOS
 - https://wiki.osdev.org/GRUB
 - The Official GRUB repo: git://git.savannah.gnu.org/grub.git
