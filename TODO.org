@@ -183,5 +183,11 @@
      - 0x40  - LS
      - 0x80  - RS
 
-** TODO Is there a way to query what joystick supports
+** DONE Is there a way to query what joystick supports
+
+   [[https://github.com/tsoding/grub-gamepad/issues/17][tsoding/grub-gamepad#17 Is there a way to query what joystick supports]]
+
 ** TODO Configurable mappings
+
+   - [X] down mapping does work
+   - [ ] what are the codes for keydown
