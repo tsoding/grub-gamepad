@@ -148,8 +148,46 @@
             - [X] I think we gonna keep doing "in-tree" because it
               handles a lot of stuff for out-of-the-box
 
-* TODO New grub version · Issue #5 · tsoding/grub-gamepad · GitHub
+* DONE New grub version · Issue #5 · tsoding/grub-gamepad · GitHub
 
   - [X] [[https://github.com/tsoding/grub-gamepad/issues/5][New grub version · Issue #5 · tsoding/grub-gamepad · GitHub]]
     - [X] configure.ac:414: error: possibly undefined macro: AC_CHECK_HEADERS
       - [X] pkg-config
+* TODO usb_gamepad is not using dpad for arrows · Issue #15 · tsoding/grub-gamepad · GitHub
+  [[https://github.com/tsoding/grub-gamepad/issues/15][usb_gamepad is not using dpad for arrows · Issue #15 · tsoding/grub-gamepad · GitHub]]
+** TODO Reports
+
+   - report[0-3] - sticks coordinates
+   - report[4]
+     - 0x18 - X 1
+     - 0x28 - A 2
+     - 0x48 - B 3
+     - 0x88 - Y 4
+     - 0x0  - dpad up
+     - 0x1  - dpad up/right
+     - 0x2  - dpad right
+     - 0x3  - dpad down/right
+     - 0x4  - dpad down
+     - 0x5  - dpad down/left
+     - 0x6  - dpad left
+     - 0x7  - dpad up/left
+     - 0x8  - dpad centered
+   - report[5]
+     - 0x00  - nothing
+     - 0x01  - LB
+     - 0x02  - RB
+     - 0x04  - LT
+     - 0x08  - RT
+     - 0x10  - back
+     - 0x20  - start
+     - 0x40  - LS
+     - 0x80  - RS
+
+** DONE Is there a way to query what joystick supports
+
+   [[https://github.com/tsoding/grub-gamepad/issues/17][tsoding/grub-gamepad#17 Is there a way to query what joystick supports]]
+
+** TODO Configurable mappings
+
+   - [X] down mapping does work
+   - [ ] what are the codes for keydown
