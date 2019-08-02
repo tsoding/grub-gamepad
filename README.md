@@ -75,6 +75,8 @@ TBD
 - The Official GRUB repo: git://git.savannah.gnu.org/grub.git
 - https://qemu.weilnetz.de/doc/qemu-doc.html#usb_005fdevices
 - https://lists.gnu.org/archive/html/help-grub/2015-01/msg00011.html
+- https://atariwiki.org/wiki/Wiki.jsp?page=How%2Bto%2Bwrite%2Ba%2BUSB%2BDriver
+- https://github.com/krislig/rumblepad2py/blob/master/pad.py
 
 ## Support
 
