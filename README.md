@@ -51,9 +51,6 @@ grub> insmod usb_gamepad
 grub> terminal_input usb_gamepad
 ```
 
-
-
-
 ## Architecture
 
 ### Adding New Module
