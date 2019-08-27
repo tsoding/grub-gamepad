@@ -44,7 +44,7 @@ grub> terminal_input usb_gamepad
 
 ```console
 $ lsusb
-$ sudo qemu-system-i386 -usb -device usb-host,hostbus=<gamepad-bus>,hostaddr=<gamepad-addr> -cdrom test.iso
+$ sudo qemu-system-i386 -usb -device usb-host,hostbus=<gamepad-bus>,hostaddr=<gamepad-addr> -cdrom test.iso # Alternatively, you can reference your device by its ids -device usb-host,vendorid=<gamepad-vendorid>,productid=<gamepad-productid> 
 grub> nativedisk pata
 grub> nativedisk uhci
 grub> insmod usb_gamepad
