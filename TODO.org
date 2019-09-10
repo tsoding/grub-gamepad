@@ -191,3 +191,10 @@
 
    - [X] down mapping does work
    - [ ] what are the codes for keydown
+* TODO The module probably works only with a single model of the gamepad · Issue #16 · tsoding/grub-gamepad · GitHub
+  [[https://github.com/tsoding/grub-gamepad/issues/16][The module probably works only with a single model of the gamepad · Issue #16 · tsoding/grub-gamepad · GitHub]]
+
+  - [X] Reject any HID devices that are not logitech rumble f510
+    - [X] file:grub/include/grub/usbdesc.h::41
+  - [ ] Make it easy to replace logitech_rumble_f510_state with something else?
+    - [ ] Check out HID specs for gamepads or something? (i don't even know what I'm talking about)
